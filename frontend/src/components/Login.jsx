@@ -46,7 +46,9 @@ const Login = () => {
 
   return (
     <div className="login-wrapper">
+    <p>Aryan Pathak Blog</p>
       <Card title="Login" className="login-card">
+        <p>hello</p>
         <Form
           name="loginForm"
           layout="vertical"
