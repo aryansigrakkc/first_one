@@ -25,7 +25,11 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const categories = useSelector((state) => state.category?.data?.data || []);
+  console.log(categories,"categories");
+  
   const blogs = useSelector((state) => state.blog?.blogs || []);
+  console.log(blogs,"blogs");
+  
 
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [likedBlogs, setLikedBlogs] = useState([]); 
@@ -93,11 +97,8 @@ const HomePage = () => {
   };
 
 
-  const handleLikeClick = (blog) => {
-    
+  const handleLikeClick = (blog) => {   
     dispatch(likeBlog(blog._id));
-
-  
     setLikedBlogs((prev) =>
       prev.includes(blog._id) ? prev.filter((id) => id !== blog._id) : [...prev, blog._id]
     );

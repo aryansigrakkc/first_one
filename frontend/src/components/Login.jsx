@@ -5,15 +5,11 @@ import { loginUser } from '../redux/slice/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './Login.css'; // optional styling
-
+import './Login.css'; 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { data } = useSelector((state) => state.user);
-  console.log(data,"sdffsdfsdfdsdsd");
-  
-
   const onFinish = (values) => {
     dispatch(loginUser(values));
   };
